@@ -65,7 +65,7 @@ router.get('/notes', async (ctx, next) => {
 router.post('/notes', async (ctx, next) => {
   const { id, text } = ctx.request.body;
 
-  console.log(text)
+  // console.log(text)
 
   notes.push({ id, text });
 
@@ -86,8 +86,8 @@ router.delete('/notes/:id', async (ctx, next) => {
     notes.splice(index, 1);
   }
 
-  console.log('index', index);
-  console.log('noteId', noteId);
+  // console.log('index', index);
+  // console.log('noteId', noteId);
 
   ctx.status = 200;
   ctx.body = { DELETE: 'ok' };
@@ -104,7 +104,7 @@ let nextId = 1;
 router.get("/messages", async (ctx) => {
   const from = Number(ctx.request.query.from);
 
-  console.log(from);
+  // console.log(from);
 
   if (from === 0 || isNaN(from)) {
     ctx.body = messages;
